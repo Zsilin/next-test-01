@@ -1,8 +1,11 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <div className="h-screen flex justify-center items-center">
-      <Image src="/globe.svg" alt="window" width={500} height={500} />
+    <div className="min-h-screen bg-gray-100">
+      <Link href="/user">用户管理</Link>
     </div>
   );
 }
