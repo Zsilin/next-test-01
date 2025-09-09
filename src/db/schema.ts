@@ -16,9 +16,6 @@ export const user = pgTable("user", {
   image: text(),
   createdAt: timestamp().notNull().defaultNow(),
   updatedAt: timestamp().notNull().defaultNow(),
-  // 你的自定义字段
-  age: integer(),
-  nickname: varchar({ length: 255 }),
 });
 
 // Better Auth 需要的会话表

@@ -15,6 +15,15 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+    requireEmailVerification: true,
+  },
+  emailVerification: {
+    autoSignInAfterVerification: true,
+    sendVerificationEmail: async ({ user, url, token }, request) => {
+      // 发送验证邮件
+      console.log(`发送验证邮件到 ${user.email}: ${url}`);
+      // 这里的 url 会包含 callbackURL 参数
+    },
   },
   socialProviders: {
     github: {
