@@ -6,7 +6,9 @@ import { NextRequest, NextResponse } from "next/server";
 // 查询所有用户
 export async function GET(request: NextRequest) {
   try {
+    console.log("获取用户");
     const allUsers = await db.select().from(users);
+    console.log("allUsers", allUsers);
     return NextResponse.json({ success: true, data: allUsers });
   } catch (error) {
     return NextResponse.json(

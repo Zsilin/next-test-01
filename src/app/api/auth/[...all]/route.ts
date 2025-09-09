@@ -1,4 +1,3 @@
-export async function GET(request: Request) {
-  // 返回json数据
-  return new Response(JSON.stringify({ message: "Hello, world!" }));
-}
+import { auth } from "@/lib/auth"; // path to your auth file
+import { toNextJsHandler } from "better-auth/next-js";
+export const { POST, GET } = toNextJsHandler(auth);

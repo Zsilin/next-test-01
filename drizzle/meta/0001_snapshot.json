@@ -1,6 +1,6 @@
 {
-  "id": "88d5fbcf-d2a8-4d5f-a370-8f9512a2d8ae",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "447a89fa-8f0a-483c-afa5-79a6ad4ebfff",
+  "prevId": "88d5fbcf-d2a8-4d5f-a370-8f9512a2d8ae",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -42,6 +42,19 @@
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
+        },
+        "nickname": {
+          "name": "nickname",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         }
       },
       "indexes": {},
