@@ -28,8 +28,6 @@ interface RegisterFormProps {
 export const RegisterForm = ({
   callbackUrl: propCallbackUrl,
 }: RegisterFormProps) => {
-  const searchParams = useSearchParams();
-  const paramCallbackUrl = searchParams.get("callbackUrl");
   // Use prop callback URL or param callback URL if provided, otherwise use the default login redirect
 
   const [error, setError] = useState<string | undefined>("");
@@ -64,7 +62,7 @@ export const RegisterForm = ({
         email: values.email,
         password: values.password,
         name: values.name,
-        callbackURL: "/auth/login",
+        callbackURL: propCallbackUrl || "/auth/login",
       },
       {
         onRequest: (ctx) => {
