@@ -1,6 +1,7 @@
 "use client";
 
 import { AuthCard } from "@/components/auth/auth-card";
+import { SocialLoginButton } from "@/components/auth/social-login-button";
 import { FormError } from "@/components/shared/form-error";
 import { FormSuccess } from "@/components/shared/form-success";
 import { Button } from "@/components/ui/button";
@@ -177,6 +178,7 @@ export const LoginForm = ({
             {isPending && <Loader2Icon className="mr-2 size-4 animate-spin" />}
             <span>登录</span>
           </Button>
+          <SocialLoginButton callbackUrl={propCallbackUrl} />
         </form>
       </Form>
     </AuthCard>

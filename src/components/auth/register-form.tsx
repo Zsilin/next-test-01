@@ -1,6 +1,7 @@
 "use client";
 
 import { AuthCard } from "@/components/auth/auth-card";
+import { SocialLoginButton } from "@/components/auth/social-login-button";
 import { FormError } from "@/components/shared/form-error";
 import { FormSuccess } from "@/components/shared/form-success";
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,6 @@ import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { EyeIcon, EyeOffIcon, Loader2Icon } from "lucide-react";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -174,11 +174,12 @@ export const RegisterForm = ({
             disabled={isPending}
             size="lg"
             type="submit"
-            className="cursor-pointer w-full flex items-center justify-center gap-2"
+            className="w-full flex items-center justify-center gap-2 cursor-pointer"
           >
             {isPending && <Loader2Icon className="mr-2 size-4 animate-spin" />}
             <span>注册</span>
           </Button>
+          <SocialLoginButton callbackUrl={propCallbackUrl} />
         </form>
       </Form>
     </AuthCard>
